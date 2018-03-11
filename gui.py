@@ -1,6 +1,6 @@
 import os
 import tkinter as tk
-
+from assistant import assist
 
 def hello():
     print("Hello World")
@@ -8,13 +8,14 @@ def hello():
 
 if __name__ == '__main__':
     root = tk.Tk()
-    root.minsize(width=300,height=300)
+    root.minsize(width=100,height=20)
     root.resizable(width=False,height=False)
-    helloCommand= lambda : hello()
+    helloCommand= lambda : assist()
     panel = tk.Label(root)
     panel.pack(side="top", fill="both", expand="yes")
 
-    play = tk.Button(root,command=helloCommand,text="hello")
+    play = tk.Button(root,command=helloCommand,text="speak",width=20)
+
 
     play.pack()
 

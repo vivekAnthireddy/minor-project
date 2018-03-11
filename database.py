@@ -3,8 +3,6 @@ import progressbar
 
 
 sql_transaction=[]
-
-
 def transaction_bldr(db ,conn,sql):
     global sql_transaction
     sql_transaction.append(sql)
