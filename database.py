@@ -2,6 +2,7 @@ import sqlite3
 import progressbar
 
 
+
 sql_transaction=[]
 def transaction_bldr(db ,conn,sql):
     global sql_transaction
@@ -17,7 +18,7 @@ def transaction_bldr(db ,conn,sql):
         sql_transaction = []
 
 def createTable(db,conn,table_name):
-    query='create table if not exists {} ( {}_name text PRIMARY KEY ,location TEXT ,{}_nickname text)'.format(table_name,table_name,table_name)
+    query='create table if not exists {} ({}_id  integer not NULL DEFAULT 0 PRIMARY KEY AUTOINCREMENT, {}_name text  ,location TEXT ,{}_nickname text)'.format(table_name,table_name,table_name,table_name)
     db.execute(query)
 
 def insertion(table_name,program_name, location, program_nickname,db,conn):
@@ -41,7 +42,7 @@ def check(program_name,db,conn):
 
 
 def database(name,location):
-    db_name = 'data'
+    db_name = 'disk'
     conn = sqlite3.connect('{}.db'.format(db_name))
     db = conn.cursor()
     tables=['programs','document','videos','music','images','misc']

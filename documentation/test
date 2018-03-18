@@ -1,0 +1,44 @@
+work done
+
+developement environment
+
+os : windows
+    language :python
+    database : sqlite3
+
+    files like speech recognition,assistant, execute, database
+
+os : linux (tesla server)
+    language: python
+    database : sqlite3
+
+    training and preparing chatbot data on tesla server
+
+
+Result and discussion ;
+
+    result : speech to text
+             search a keyword by opening browser
+             open any file
+
+    discussion : response time can be decrease further by implementing sppech recognition from scratch rather than using it from online
+                 enrich dataset to train the chat bot model to increase it`s efficiency
+                 training time is more and you should use powerful gpu to run it
+                 scanning drive may take time some time
+
+Individual Contribution
+
+    mayank Mahavar (15IT126)  : created chatbot , handled tesla server and database
+    munna sah (15IT221)       : created speech recognition(search differnt speech recognition)
+    vivek reddy (15IT109)     : created filesearch on all the hard disk
+
+Conclusion and Future Work
+
+    automation of programs. searching anything on browser, open any file from voice ,
+    chat with your assistant(interaction)
+
+    in future question and answer algorithm to use it as the memory of the assistant
+    sending mail
+    reading/writing documents
+
+    trying to automize everything from voice

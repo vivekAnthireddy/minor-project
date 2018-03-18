@@ -1,5 +1,7 @@
 import speech_recognition as sr
-import time
+#import time
+import pyttsx3
+
 
 def speech():
     r = sr.Recognizer()
@@ -21,13 +23,23 @@ def speech():
     return temp
 
 
+def textTospeech(text):
+    engine=pyttsx3.init()
+    engine.say(text)
+    engine.runAndWait()
+
+
 
 
 
 if __name__ == '__main__':
+    """
     text=speech()
     print(text)
+    """
+    text = "Sorry Unable to recognize any command try including" + '\n\n' + "search than sentence you want to search " + '\n' + "open than filename" + '\n' + ''
 
+    textTospeech(text)
 
 
 

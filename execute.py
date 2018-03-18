@@ -1,6 +1,7 @@
 import os
 import sqlite3
 import string
+from assistant import textTospeech
 
 def check(location):
     if " " in location:
@@ -17,7 +18,9 @@ def check(location):
 
 def displayresult(result):
     for i in range(len(result)):
-        print(i+1," : ",result[i][2])
+        text= str(i+1)+" : "+ str(result[i][3]) + "\t location is :"+result[i][2].split('\\')[-1]
+        print(text)
+        textTospeech(text)
 
 """
 def getResult(file,db):
@@ -44,8 +47,8 @@ def program(file,db):
     if len(result) > 1:
         displayresult(result)
         index = int(input("Which {}".format(file)))
-        file_name = result[index - 1][0]
-        location = result[index - 1][1]
+        file_name = result[index - 1][1]
+        location = result[index - 1][2]
         location = check(location)
         print(location)
         path = str(location) + "\\" + str(file_name)
@@ -94,8 +97,8 @@ def document(file,db):
     if len(result) > 1:
         displayresult(result)
         index = int(input("Which {}".format(file)))
-        file_name = result[index - 1][0]
-        location = result[index - 1][1]
+        file_name = result[index - 1][1]
+        location = result[index - 1][2]
         location = check(location)
         print(location)
         #app=getDocumentapp(file_name,db)
@@ -117,7 +120,7 @@ def document(file,db):
         os.system(path)
 
 def fileopen(file):
-    conn = sqlite3.connect('data.db')
+    conn = sqlite3.connect('disk.db')
     db = conn.cursor()
     print("app" in file)
     if "app" in file:
