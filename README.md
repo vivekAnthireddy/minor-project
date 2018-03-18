@@ -1,0 +1,2 @@
+# minor-project
+pc assistant
